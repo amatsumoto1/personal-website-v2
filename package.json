@@ -7,7 +7,7 @@
     "deploy": "gh-pages -d build",
     "start": "webpack serve --mode development --open --hot",
     "build": "webpack --mode production",
-    "test": "jest"
+    "test": "jest --passWithNoTests"
   },
   "repository": {
     "type": "git",
