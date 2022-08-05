@@ -3,6 +3,7 @@ import Popup from '../../../Common/Popup';
 import { ScreenSizesPx } from '../../../../constants/screen';
 import { HEADER_HEIGHT, HEADER_SETTINGS_EXPAND_COLLAPSE_TIME } from '../../../../constants/layout';
 import { Button } from '../../../Styles/Button';
+import { NoBulletList } from '../../../Styles/Menu';
 
 type SettingsMenuContainerProps = {
   expanded: boolean
@@ -34,10 +35,23 @@ export const SettingsMenuContainer = styled(Popup)<SettingsMenuContainerProps>`
   }
 `;
 
+export const SettingsMenuItemList = styled(NoBulletList)`
+  border-top: 1px solid ${props => props.theme.colors.primary};
+
+  @media screen and (min-width: ${ScreenSizesPx.MD}) {
+    border-top: none;
+  }
+`;
+
 export const SettingsMenuItemContainer = styled.li`
   width: 100%;
   line-height: 2em;
   height: 2em;
+
+  @media screen and (min-width: ${ScreenSizesPx.MD}) {
+    line-height: 1.5em;
+    height: 1.5em;
+  }
 `;
 
 export const SettingsMenuButton = styled(Button).attrs({
@@ -50,9 +64,11 @@ export const SettingsMenuButton = styled(Button).attrs({
   white-space: nowrap;
   border-bottom: 1px solid ${props => props.theme.colors.primary};
   border-radius: 0;
+  font-weight: bold;
 
   @media screen and (min-width: ${ScreenSizesPx.MD}) {
     padding: 0 0.5em;
     border-bottom: none;
+    font-size: 0.9em;
   }
 `;

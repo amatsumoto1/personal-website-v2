@@ -11,7 +11,8 @@ const NavButtonLine = styled.span<NavButtonLineProps>`
   position: absolute;
   height: 2px;
   width: 14px;
-  transition: transform ${HEADER_NAV_EXPAND_COLLAPSE_TIME} cubic-bezier(0.04, 0.04, 0.12, 0.96);
+  transition: transform ${HEADER_NAV_EXPAND_COLLAPSE_TIME} cubic-bezier(0.04, 0.04, 0.12, 0.96),
+              background-color ${HEADER_NAV_EXPAND_COLLAPSE_TIME} cubic-bezier(0.04, 0.04, 0.12, 0.96);
 `;
 
 export const NavButtonLineTopLeft = styled(NavButtonLine)`
