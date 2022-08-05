@@ -5,7 +5,11 @@ import { createColorStyle } from '../Styles/utils';
 import { HEADER_HEIGHT, ZIndexes } from '../../constants/layout';
 import { Button } from '../Styles/Button';
 
-export const HeaderContainer = styled(FlexRow)`
+export const HeaderContainer = styled(FlexRow).attrs({
+  alignItems: "flex-start",
+  justifyContent: "center",
+  flexWrap: "wrap"
+})`
   position: fixed;
   top: 0;
   left: 0;
@@ -24,5 +28,6 @@ export const HeaderButton = styled(Button).attrs({
   height: 100%;
   width: ${HEADER_HEIGHT};
   padding: 0;
+  position: relative;
 `;
 

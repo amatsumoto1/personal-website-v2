@@ -1,11 +1,15 @@
 import React from 'react';
+import { HashRouter } from 'react-router-dom';
 import ThemeContainer from './components/ThemeContainer';
-import Header from './components/Header';
+import Layout from './components/Layout';
 
 const App: React.FC = () => (
-  <ThemeContainer>
-    <Header />
-  </ThemeContainer>
+  <HashRouter>
+    <ThemeContainer>
+      <Layout>
+      </Layout>
+    </ThemeContainer>
+  </HashRouter>
 );
 
 export default App;
