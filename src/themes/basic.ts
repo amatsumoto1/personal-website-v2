@@ -9,8 +9,8 @@ export const basicTheme: DefaultTheme = {
     primaryHighlighted: '#49535f',
     secondary: '#ebedf0',
     secondaryHighlighted: '#c1c1c1',
-    link: '#24292f',
-    linkHighlighted: '#49535f',
+    link: '#2088a4',
+    linkHighlighted: '#2cb2d5',
     header: '#ededed',
     headerHighlighed: '#cacaca',
     popup: '#ededed',
@@ -25,7 +25,7 @@ export const basicTheme: DefaultTheme = {
   },
   borderRadius: {
     default: '5px',
-    button: '2px',
+    button: '5px',
     modal: '1em'
   }
-}
+};

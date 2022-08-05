@@ -56,7 +56,11 @@ const Settings: React.FC<Props> = ({
     else {
       collapseMenu();
     }
-  }, [expanded]);
+  }, [
+    expanded,
+    expandMenu,
+    collapseMenu
+  ]);
 
   const onSettingsButtonClicked = (e: React.SyntheticEvent<HTMLButtonElement>) => {
     e.stopPropagation();

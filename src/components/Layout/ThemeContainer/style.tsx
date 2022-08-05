@@ -1,23 +1,13 @@
-import { createGlobalStyle, css } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
-
   html,
   body,
   #app-root {
     height: 100%;
   }
 
-  body {
-    box-sizing: border-box;
-    margin: 0;
-    min-height: 100vh;
-    width: 100%;
-    font-family: 'Open Sans', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-    font-size: var(--font-size-default);
-
+  :root {
     ${({ theme: { colors, fontSizes, borderRadius} }) => `
       --color-primary: ${colors.primary};
       --color-primary-highlighted: ${colors.primaryHighlighted};
@@ -40,6 +30,19 @@ export const GlobalStyle = createGlobalStyle`
       --border-radius-button: ${borderRadius.button};
       --border-radius-modal: ${borderRadius.modal};
     `}
+  }
+
+  body {
+    box-sizing: border-box;
+    margin: 0;
+    min-height: 100vh;
+    width: 100%;
+    font-family: 'Open Sans', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    font-size: var(--font-size-default);
+    color: var(--color-primary);
+    background: var(--color-secondary);
   }
 
   #app-root {

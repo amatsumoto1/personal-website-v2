@@ -2,7 +2,7 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from './style';
 import { useSelector } from 'react-redux';
-import { getCurrentTheme } from '../../selectors/theme';
+import { getCurrentTheme } from '../../../selectors/theme';
 
 type Props = {
   children: React.ReactNode

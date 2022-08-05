@@ -19,7 +19,7 @@ export const ModalOverlay = styled(FlexCol).attrs({
 
 export const ModalContainer = styled.div`
   margin-top: ${MODAL_TOP_POSITION};
-  padding: 1em;
+  padding: 0.5em 1em;
   ${createColorStyle({ section: 'modal' })}
   border-radius: var(--border-radius-modal);
 `;
@@ -28,7 +28,7 @@ export const ModalTitle = styled(FlexRow).attrs({
   justifyContent: 'center'
 })`
   font-weight: bold;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   padding-left: ${MODAL_EXIT_BUTTON_HEIGHT};
   text-align: center;
   flex-grow: 1;

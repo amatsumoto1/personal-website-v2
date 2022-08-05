@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { NavItemContainer, NavLink } from './style';
 import { NavItemInfo } from '../../../../types/header';
 
@@ -14,4 +14,4 @@ const NavItem: React.FC<NavItemInfo> = ({
   </NavItemContainer>
 );
 
-export default NavItem;
+export default memo(NavItem);

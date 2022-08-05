@@ -1,7 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { DefaultTheme } from 'styled-components';
 import {
-  basicTheme
+  basicTheme,
+  darkTheme
 } from '../../themes';
 import {
   ThemeName,
@@ -16,7 +17,7 @@ type ThemeState = {
 
 export const themeTable: Record<ThemeName, DefaultTheme> = {
   [ThemeName.BASIC]: basicTheme,
-  [ThemeName.DARK]: basicTheme,
+  [ThemeName.DARK]: darkTheme,
   [ThemeName.MUTED]: basicTheme,
   [ThemeName.COLORFUL]: basicTheme,
 };

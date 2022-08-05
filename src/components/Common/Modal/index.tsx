@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import {
   ModalOverlay,
@@ -30,6 +30,20 @@ const Modal: React.FC<Props> = ({
   const modalHeaderId = `${name}-title`;
   const capitalizedName = name ? `${name.slice(0, 1).toUpperCase()}${name.slice(1)}` : 'Modal';
   const modalButtonAriaLabel = `Close ${capitalizedName}`;
+
+  const onKeyboardClick = (e: KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      close();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('keydown', onKeyboardClick);
+
+    return () => {
+      document.removeEventListener('keydown', onKeyboardClick);
+    }
+  }, [onKeyboardClick]);
 
   const modalComponent = (
     <ModalOverlay>

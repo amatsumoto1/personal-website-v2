@@ -13,7 +13,9 @@ function useClickOutside<T extends HTMLElement>(ref: React.RefObject<T>, callbac
         return () => {
             document.removeEventListener('click', handleClickOutside);
         }
-    });
+    }, [
+        handleClickOutside
+    ]);
 }
 
 export default useClickOutside;

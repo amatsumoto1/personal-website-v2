@@ -1,14 +1,18 @@
-import React from 'react';
-import { HashRouter } from 'react-router-dom';
-import ThemeContainer from './components/ThemeContainer';
+import React, { Suspense, lazy } from 'react';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
+
+const Home = lazy(() => import('./pages/Home'));
 
 const App: React.FC = () => (
   <HashRouter>
-    <ThemeContainer>
-      <Layout>
-      </Layout>
-    </ThemeContainer>
+    <Layout>
+      <Suspense>
+        <Routes>
+          <Route path="/" element={ <Home /> } />
+        </Routes>
+      </Suspense>
+    </Layout>
   </HashRouter>
 );
 

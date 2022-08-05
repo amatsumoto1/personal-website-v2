@@ -1,5 +1,7 @@
 import { basicTheme } from './basic';
+import { darkTheme } from './dark';
 
 export {
-  basicTheme
+  basicTheme,
+  darkTheme
 };
