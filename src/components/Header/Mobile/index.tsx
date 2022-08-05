@@ -1,27 +1,57 @@
 import React, { useState, useCallback } from 'react';
-import { LogoContainer, NavContainer, NavItemList } from './style';
+import { LogoContainer, NavContainer, NavItemList, SettingsPlaceholder } from './style';
 import { NavItemInfo } from '../../../types/header';
+import { HEADER_NAV_EXPAND_COLLAPSE_TIME_MS } from '../../../constants/layout';
 import NavButton from './NavButton';
 import NavItem from './NavItem';
+import Settings from '../Settings';
 
 type Props = {
   navLinks: NavItemInfo[],
 }
 
 const MobileHeader: React.FC<Props> = ({ navLinks }) => {
+  const [showNav, setShowNav] = useState(false);
   const [navExpanded, setNavExpanded] = useState(false);
+  const [settingsMenuExpanded, setSettingsMenuExpanded] = useState(false);
+
+  const expandNav = () => {
+    setShowNav(true);
+    setTimeout(() => {
+      setNavExpanded(true);  
+    });
+  }
+
+  const collapseNav = () => {
+    setNavExpanded(false);
+    setTimeout(() => {
+      setShowNav(false);
+    }, HEADER_NAV_EXPAND_COLLAPSE_TIME_MS);
+  }
 
   const toggleNavExpanded = useCallback(() => {
-    setNavExpanded(!navExpanded);
+    if (!navExpanded) {
+      setSettingsMenuExpanded(false);
+      expandNav();
+    }
+    else {
+      collapseNav();
+    }
+  
   }, [
     navExpanded,
-    setNavExpanded
+    setSettingsMenuExpanded
   ]);
 
   const hideNav = useCallback(() => {
-    setNavExpanded(false);
+    collapseNav();
+  }, []);
+
+  const toggleSettingsMenu = useCallback(() => {
+    setSettingsMenuExpanded(!settingsMenuExpanded);
   }, [
-    setNavExpanded
+    settingsMenuExpanded,
+    setSettingsMenuExpanded
   ]);
 
   return (
@@ -31,9 +61,10 @@ const MobileHeader: React.FC<Props> = ({ navLinks }) => {
           expanded={navExpanded}
         />
         {
-          navExpanded &&
+          showNav &&
           <NavContainer
             hide={hideNav}
+            expanded={navExpanded}
             type="nav"
           >
             <NavItemList>
@@ -52,6 +83,14 @@ const MobileHeader: React.FC<Props> = ({ navLinks }) => {
       <LogoContainer>
         
       </LogoContainer>
+      {
+        showNav ?
+        <SettingsPlaceholder /> :
+        <Settings
+          expanded={settingsMenuExpanded}
+          toggleExpanded={toggleSettingsMenu}
+        />
+      }
     </>
   );
 }

@@ -15,7 +15,7 @@ const BaseButton = styled.button`
   cursor: pointer;
   font-size: var(--font-size-default);
   border-radius: var(--border-radius-button);
-  color: transparent;
+  background: transparent;
   box-sizing: border-box;
 
   &:disabled {

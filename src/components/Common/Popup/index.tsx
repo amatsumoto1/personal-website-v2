@@ -32,6 +32,7 @@ const Popup: React.FC<Props> = ({
       section={section}
       className={className}
       as={type}
+      ref={ref}
     >
       {children}
     </PopupContainer>

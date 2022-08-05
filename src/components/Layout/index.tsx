@@ -1,4 +1,5 @@
 import React from 'react';
+import { MainContentContainer } from './style';
 import Header from '../Header';
 
 type Props = {
@@ -8,7 +9,9 @@ type Props = {
 const Layout: React.FC<Props> = ({ children }) => (
   <>
     <Header />
-    {children}
+    <MainContentContainer>
+      {children}
+    </MainContentContainer>
   </>
 );
 

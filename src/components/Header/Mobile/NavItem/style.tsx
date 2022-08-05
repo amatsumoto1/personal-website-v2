@@ -9,7 +9,6 @@ export const NavItemContainer = styled.li`
   height: ${NavItemHeight};
   line-height: ${NavItemHeight};
   font-weight: bold;
-  font-size: 0.9em;
   ${createHighlightedBackgroundStyle('header')}
   border-bottom: 1px solid ${({ theme }) => theme.colors.primary};
 
