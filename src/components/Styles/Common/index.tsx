@@ -23,7 +23,13 @@ export const Container = styled.div`
   @media screen and (min-width: ${ScreenSizesPx.XL}) {
     max-width: 1010px;
   }
-`;  
+`;
+
+export const PageHeader = styled.h1`
+  font-size: 2.5rem;
+  width: 100%;
+  text-align: center;
+`;
 
 export const AnimatedUnderlineLink = styled.a<{
   section?: PageSection

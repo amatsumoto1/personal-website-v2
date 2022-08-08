@@ -3,6 +3,7 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 
 const Home = lazy(() => import('./pages/Home'));
+const About = lazy(() => import('./pages/About'));
 
 const App: React.FC = () => (
   <HashRouter>
@@ -10,6 +11,7 @@ const App: React.FC = () => (
       <Suspense>
         <Routes>
           <Route path="/" element={ <Home /> } />
+          <Route path='/about' element={ <About /> } />
         </Routes>
       </Suspense>
     </Layout>

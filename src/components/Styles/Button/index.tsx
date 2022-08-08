@@ -25,32 +25,34 @@ const BaseButton = styled.button`
 
 type ButtonProps = {
   variant?: ButtonVariant,
-  section?: PageSection
+  section?: PageSection,
+  ignoreHighlight?: boolean
 };
 
 const createButtonStyle = ({
   variant = 'default',
   section = 'main',
+  ignoreHighlight = false
 }: ButtonProps) => {
   switch (variant) {
     case 'borderless':
       return css`
         border-style: none;
         ${createMainColorStyle('primary')}
-        ${createHighlightedBackgroundStyle(section)}
+        ${!ignoreHighlight && createHighlightedBackgroundStyle(section)}
       `;
     case 'circular':
       return css`
         border-style: none;
         border-radius: 50%;
         ${createMainColorStyle('primary')}
-        ${createHighlightedBackgroundStyle(section)}
+        ${!ignoreHighlight && createHighlightedBackgroundStyle(section)}
       `;
     case 'default':
     default:
       return css`
         ${createMainColorStyle('primary')}
-        ${createHighlightedBackgroundStyle(section)}
+        ${!ignoreHighlight && createHighlightedBackgroundStyle(section)}
       `;
   }
 };

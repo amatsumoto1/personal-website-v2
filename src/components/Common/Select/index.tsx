@@ -15,7 +15,6 @@ type Props = {
   label?: string,
   section?: PageSection,
   defaultValue?: string,
-  value?: string,
   extraLabelStyles?: FlattenSimpleInterpolation,
   extraSelectStyles?: FlattenSimpleInterpolation,
   className?: string
@@ -37,7 +36,6 @@ const Select: React.FC<Props> = ({
   label,
   section = 'main',
   defaultValue = '',
-  value = '',
   extraLabelStyles,
   extraSelectStyles,
   className
@@ -73,7 +71,6 @@ const Select: React.FC<Props> = ({
         aria-describedby={labelId}
         onChange={onSelectionChanged}
         defaultValue={defaultValue}
-        value={value}
         section={section}
         extraStyles={extraSelectStyles}
       >

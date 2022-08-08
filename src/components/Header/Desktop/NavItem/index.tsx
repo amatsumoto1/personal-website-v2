@@ -6,12 +6,23 @@ const NavItem: React.FC<NavItemInfo> = ({
   text,
   path,
   ariaLabel
-}) => (
-  <NavItemContainer>
-    <NavLink to={path} aria-label={ariaLabel}>
-      {text}
-    </NavLink>
+}) => {
+
+  const onClick = (e: React.SyntheticEvent<HTMLAnchorElement>) => {
+    e.currentTarget.blur();
+  }
+
+  return (
+    <NavItemContainer>
+      <NavLink
+        to={path}
+        aria-label={ariaLabel}
+        onClick={onClick}
+      >
+        {text}
+      </NavLink>
   </NavItemContainer>
-);
+  )
+}
 
 export default memo(NavItem);
